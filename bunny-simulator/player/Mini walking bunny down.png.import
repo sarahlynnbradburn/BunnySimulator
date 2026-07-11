@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl4mwptifcjds"
-path="res://.godot/imported/IMG_0111.jpg-2e9a268ac3049898658f3ceb6730ae01.ctex"
+uid="uid://mvfdg32ea8sp"
+path="res://.godot/imported/Mini walking bunny down.png-ec9a278db9eb978f40fcf711ab4b0222.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/IMG_0111.jpg"
-dest_files=["res://.godot/imported/IMG_0111.jpg-2e9a268ac3049898658f3ceb6730ae01.ctex"]
+source_file="res://player/Mini walking bunny down.png"
+dest_files=["res://.godot/imported/Mini walking bunny down.png-ec9a278db9eb978f40fcf711ab4b0222.ctex"]
 
 [params]
 
