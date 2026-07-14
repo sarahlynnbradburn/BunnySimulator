@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://i8c0htj6pqrn"]
 
 [ext_resource type="PackedScene" uid="uid://cx1qnt8qg757b" path="res://player/player.tscn" id="1_6xmxd"]
+[ext_resource type="Texture2D" uid="uid://cfo5ple1x6r1f" path="res://world/wood_floor.png" id="2_tcf2h"]
 
 [node name="Node2D" type="Node2D" unique_id=1581614405]
 
 [node name="Player" parent="." unique_id=2003750965 instance=ExtResource("1_6xmxd")]
 position = Vector2(628, 250)
+
+[node name="GroundLayer" type="Node2D" parent="." unique_id=1248811550]
+
+[node name="Parallax2D" type="Parallax2D" parent="GroundLayer" unique_id=1962447280]
+repeat_size = Vector2(640, 320)
+repeat_times = 9
+
+[node name="TextureRect" type="TextureRect" parent="GroundLayer/Parallax2D" unique_id=1159498504]
+offset_top = 1.0
+offset_right = 640.0
+offset_bottom = 321.0
+texture = ExtResource("2_tcf2h")
+stretch_mode = 1

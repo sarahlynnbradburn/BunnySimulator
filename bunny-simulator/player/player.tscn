@@ -167,9 +167,14 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=2003750965]
+z_index = 1
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_rkbax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1828113519]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_s7qer")
 animation = &"stand_up"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1633707437]
