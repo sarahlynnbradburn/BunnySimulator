@@ -50,6 +50,12 @@ walk_down={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_2="player"
+2d_physics/layer_1="World"
+2d_physics/layer_2="player"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
