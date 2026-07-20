@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cfo5ple1x6r1f" path="res://world/wood_floor.png" id="2_tcf2h"]
 [ext_resource type="Texture2D" uid="uid://24ugdaq2elh1" path="res://world/Untitled 2.png" id="3_4717r"]
 [ext_resource type="PackedScene" uid="uid://tkvbrbsdkybv" path="res://buttercup/character_body_2d.tscn" id="4_h5o24"]
+[ext_resource type="Texture2D" uid="uid://w0tvn13qe12k" path="res://world/Untitled.png" id="4_mmdvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmdvd"]
 texture = ExtResource("3_4717r")
@@ -45,7 +46,7 @@ physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_mmdvd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5o24"]
-texture = ExtResource("2_tcf2h")
+texture = ExtResource("4_mmdvd")
 texture_region_size = Vector2i(80, 80)
 0:0/0 = 0
 
