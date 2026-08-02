@@ -11,7 +11,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1noge"]
-size = Vector2(73, 40)
+size = Vector2(80, 40)
 
 [sub_resource type="Animation" id="Animation_7q3sd"]
 length = 0.001
@@ -104,5 +104,5 @@ libraries/ = SubResource("AnimationLibrary_7q3sd")
 libraries/ = SubResource("AnimationLibrary_ga0dy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194901692]
-position = Vector2(0.5, 18)
+position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_1noge")
