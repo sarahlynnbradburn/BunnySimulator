@@ -11,7 +11,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1noge"]
-size = Vector2(80, 40)
+size = Vector2(80, 39)
 
 [sub_resource type="Animation" id="Animation_7q3sd"]
 length = 0.001
@@ -92,6 +92,7 @@ _data = {
 [node name="Buttercup" type="CharacterBody2D" unique_id=1859081179]
 collision_layer = 4
 collision_mask = 7
+motion_mode = 1
 
 [node name="PetPosition" type="Sprite2D" parent="." unique_id=1125624752]
 texture = ExtResource("1_1noge")
@@ -104,5 +105,5 @@ libraries/ = SubResource("AnimationLibrary_7q3sd")
 libraries/ = SubResource("AnimationLibrary_ga0dy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194901692]
-position = Vector2(0, 18)
+position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_1noge")
