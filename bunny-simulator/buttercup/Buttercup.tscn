@@ -118,7 +118,7 @@ nodes/StateMachine/position = Vector2(-13.333333, 120)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx15f"]
-size = Vector2(126, 49)
+size = Vector2(145, 96)
 
 [node name="Buttercup" type="CharacterBody2D" unique_id=1859081179]
 collision_layer = 4
@@ -146,7 +146,8 @@ collision_mask = 7
 script = ExtResource("3_hkcea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1641739535]
-position = Vector2(-22, 14.5)
+position = Vector2(-31.5, 22)
 shape = SubResource("RectangleShape2D_gx15f")
 
 [connection signal="player_entered" from="Area2D" to="." method="_on_area_2d_player_entered"]
+[connection signal="player_exited" from="Area2D" to="." method="_on_area_2d_player_exited"]

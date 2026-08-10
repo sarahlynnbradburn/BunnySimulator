@@ -7,3 +7,7 @@ extends CharacterBody2D
 func _on_area_2d_player_entered() -> void:
 	print("player entered signal recieved by buttercup")
 	playback.travel("request_grooming")
+
+func _on_area_2d_player_exited() -> void:
+	print("player exited signal recieved by buttercup")
+	playback.travel("stand")
