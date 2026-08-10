@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://tkvbrbsdkybv"]
 
 [ext_resource type="Texture2D" uid="uid://coqjl31h6ofxs" path="res://buttercup/Buttercup.png" id="1_1noge"]
+[ext_resource type="Script" uid="uid://bjihjvx7rwel3" path="res://buttercup/buttercup.gd" id="1_hkcea"]
+[ext_resource type="Script" uid="uid://dhmoa1v6r611v" path="res://buttercup/area_2d.gd" id="3_hkcea"]
 
 [sub_resource type="Animation" id="Animation_1noge"]
 resource_name = "stand"
@@ -89,10 +91,40 @@ _data = {
 &"stand": SubResource("Animation_pgmht")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hkcea"]
+animation = &"request_grooming"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cmj2o"]
+animation = &"stand"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0cf1b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3t3u0"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ktq4c"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_utlu6"]
+states/request_grooming/node = SubResource("AnimationNodeAnimation_hkcea")
+states/request_grooming/position = Vector2(490.66666, 99.25926)
+states/stand/node = SubResource("AnimationNodeAnimation_cmj2o")
+states/stand/position = Vector2(333.3333, 100.22222)
+transitions = ["Start", "stand", SubResource("AnimationNodeStateMachineTransition_0cf1b"), "stand", "request_grooming", SubResource("AnimationNodeStateMachineTransition_3t3u0"), "request_grooming", "stand", SubResource("AnimationNodeStateMachineTransition_ktq4c")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_inpnt"]
+graph_offset = Vector2(-123.810555, 27.160126)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_utlu6")
+nodes/StateMachine/position = Vector2(-13.333333, 120)
+node_connections = [&"output", 0, &"StateMachine"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx15f"]
+size = Vector2(126, 49)
+
 [node name="Buttercup" type="CharacterBody2D" unique_id=1859081179]
 collision_layer = 4
 collision_mask = 7
 motion_mode = 1
+script = ExtResource("1_hkcea")
 
 [node name="PetPosition" type="Sprite2D" parent="." unique_id=1125624752]
 texture = ExtResource("1_1noge")
@@ -103,7 +135,18 @@ libraries/ = SubResource("AnimationLibrary_7q3sd")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1450293345]
 libraries/ = SubResource("AnimationLibrary_ga0dy")
+tree_root = SubResource("AnimationNodeBlendTree_inpnt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194901692]
 position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_1noge")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1267411403]
+collision_mask = 7
+script = ExtResource("3_hkcea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1641739535]
+position = Vector2(-22, 14.5)
+shape = SubResource("RectangleShape2D_gx15f")
+
+[connection signal="player_entered" from="Area2D" to="." method="_on_area_2d_player_entered"]

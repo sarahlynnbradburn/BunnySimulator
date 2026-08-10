@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
 		
 func move_state(delta: float) -> void:
 	input_vector = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
-	print(input_vector)		
 	if input_vector != Vector2.ZERO:
 		#y-axis is counterintuative in godot (and most game engines)
 		#this lets us set up the animations intuatively in the blend 
