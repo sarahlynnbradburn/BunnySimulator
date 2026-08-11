@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://coqjl31h6ofxs" path="res://buttercup/Buttercup.png" id="1_1noge"]
 [ext_resource type="Script" uid="uid://bjihjvx7rwel3" path="res://buttercup/buttercup.gd" id="1_hkcea"]
 [ext_resource type="Script" uid="uid://dhmoa1v6r611v" path="res://buttercup/area_2d.gd" id="3_hkcea"]
+[ext_resource type="Script" uid="uid://cmmjotjn8jx7n" path="res://buttercup/interaction_area.gd" id="4_cmj2o"]
 
 [sub_resource type="Animation" id="Animation_1noge"]
 resource_name = "stand"
@@ -118,7 +119,10 @@ nodes/StateMachine/position = Vector2(-13.333333, 120)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx15f"]
-size = Vector2(145, 96)
+size = Vector2(177, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkcea"]
+size = Vector2(31, 34)
 
 [node name="Buttercup" type="CharacterBody2D" unique_id=1859081179]
 collision_layer = 4
@@ -141,13 +145,21 @@ tree_root = SubResource("AnimationNodeBlendTree_inpnt")
 position = Vector2(0, 19.5)
 shape = SubResource("RectangleShape2D_1noge")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1267411403]
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1267411403]
 collision_mask = 7
 script = ExtResource("3_hkcea")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1641739535]
-position = Vector2(-31.5, 22)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1641739535]
+position = Vector2(-47.5, 19)
 shape = SubResource("RectangleShape2D_gx15f")
 
-[connection signal="player_entered" from="Area2D" to="." method="_on_area_2d_player_entered"]
-[connection signal="player_exited" from="Area2D" to="." method="_on_area_2d_player_exited"]
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1045319420]
+collision_mask = 7
+script = ExtResource("4_cmj2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2112760634]
+position = Vector2(-35.5, 12)
+shape = SubResource("RectangleShape2D_hkcea")
+
+[connection signal="player_entered" from="DetectionArea" to="." method="_on_area_2d_player_entered"]
+[connection signal="player_exited" from="DetectionArea" to="." method="_on_area_2d_player_exited"]

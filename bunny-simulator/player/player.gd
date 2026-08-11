@@ -9,8 +9,10 @@ const SPEED = 200.0
 
 func _physics_process(delta: float) -> void:
 	var state = playback.get_current_node()	
+
 	match state:
 		"MoveState": move_state(delta)
+		"groom_right ": pass
 		
 func move_state(delta: float) -> void:
 	input_vector = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
@@ -21,6 +23,9 @@ func move_state(delta: float) -> void:
 		var direction_vector: = Vector2(input_vector.x, -input_vector.y)
 				
 		update_blend_positions(direction_vector)	
+	if Input.is_action_just_pressed("groom"):
+		print("groom")
+		playback.travel("groom_right")
 		
 	velocity = input_vector * SPEED
 	move_and_slide()
