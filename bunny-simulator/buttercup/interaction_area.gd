@@ -7,6 +7,11 @@ func _ready() -> void:
 	self.body_entered.connect(_on_collision_object_entered)
 	self.body_exited.connect(_on_collision_object_exited)
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("groom"):
+		if player_in_zone:
+			SignalBus.groom_buttercup.emit()
+
 # 2. This function automatically runs the instant a physics body enters
 func _on_collision_object_entered(body: Node2D) -> void:
 	# 3. Prints the exact name of the node that just crossed into the area

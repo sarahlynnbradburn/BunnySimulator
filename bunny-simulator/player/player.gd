@@ -7,6 +7,10 @@ const SPEED = 200.0
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/StateMachine/playback") as AnimationNodeStateMachinePlayback
 
+func _ready() -> void:
+	SignalBus.groom_buttercup.connect(player_groom_buttercup)
+
+
 func _physics_process(delta: float) -> void:
 	var state = playback.get_current_node()	
 
@@ -23,12 +27,12 @@ func move_state(delta: float) -> void:
 		var direction_vector: = Vector2(input_vector.x, -input_vector.y)
 				
 		update_blend_positions(direction_vector)	
-	if Input.is_action_just_pressed("groom"):
-		print("groom")
-		playback.travel("groom_right")
 		
 	velocity = input_vector * SPEED
 	move_and_slide()
+	
+func player_groom_buttercup() -> void:
+	playback.travel("groom_right")
 
 func update_blend_positions(direction_vector: Vector2) -> void:
 	#Calling functions will go down the tree 
