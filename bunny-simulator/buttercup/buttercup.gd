@@ -18,6 +18,9 @@ func _on_area_2d_player_exited() -> void:
 	playback.travel("stand")
 
 func play_heart_animation() -> void:
+	await get_tree().create_timer(4.0).timeout
 	var heart_instance = HEART_EFFECT.instantiate()
 	get_tree().current_scene.add_child(heart_instance)
 	heart_instance.global_position = global_position
+	heart_instance.position.y -= 15 
+	heart_instance.position.x -= 30

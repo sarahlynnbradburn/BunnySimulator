@@ -18,6 +18,14 @@ region = Rect2(42, 0, 21, 18)
 atlas = ExtResource("1_rovm5")
 region = Rect2(42, 0, 21, 18)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf5ec"]
+atlas = ExtResource("1_rovm5")
+region = Rect2(42, 0, 21, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxbpg"]
+atlas = ExtResource("1_rovm5")
+region = Rect2(42, 0, 21, 18)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_nf5ec"]
 animations = [{
 "frames": [{
@@ -32,6 +40,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rovm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf5ec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxbpg")
 }],
 "loop": false,
 "name": &"default",
@@ -41,7 +55,5 @@ animations = [{
 [node name="heart_effect" type="AnimatedSprite2D" unique_id=491116604]
 sprite_frames = SubResource("SpriteFrames_nf5ec")
 autoplay = "default"
-frame = 3
-frame_progress = 1.0
 
 [connection signal="animation_finished" from="." to="." method="queue_free"]

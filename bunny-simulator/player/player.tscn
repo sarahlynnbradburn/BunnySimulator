@@ -438,7 +438,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -537,7 +537,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -838,7 +838,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -927,7 +927,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1154,14 +1154,13 @@ transitions = ["Start", "MoveState", SubResource("AnimationNodeStateMachineTrans
 graph_offset = Vector2(232.22122, 0)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_65viv"]
-graph_offset = Vector2(-295.62674, 77.00006)
 nodes/output/position = Vector2(500, 60)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_c35mf")
 nodes/StateMachine/position = Vector2(-36.636894, 62.233738)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjkh3"]
-size = Vector2(31.486366, 21.147758)
+size = Vector2(31.486366, 10.573879)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6k8r"]
 size = Vector2(43, 41)
@@ -1202,7 +1201,7 @@ parameters/StateMachine/MoveState/WalkState/blend_position = Vector2(0, 0)
 visible = false
 
 [node name="sideways_collision" type="CollisionShape2D" parent="." unique_id=1511785964]
-position = Vector2(0, 20)
+position = Vector2(1.4344602e-06, 10.499999)
 rotation = -3.1415925
 scale = Vector2(2.540782, -1.7968808)
 shape = SubResource("RectangleShape2D_qjkh3")
